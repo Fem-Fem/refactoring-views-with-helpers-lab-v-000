@@ -6,7 +6,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
-    x = true
+    x = false
     Artist.all.each do |art|
       if art.name == name
         x = true
