@@ -16,7 +16,7 @@ class Song < ActiveRecord::Base
     if x == false
       self.artist = Artist.create!(name: name)
     else
-      self.artist = art
+      self.artist = this_artist
     end
   end
 end
