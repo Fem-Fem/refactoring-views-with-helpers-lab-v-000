@@ -12,7 +12,7 @@ class Song < ActiveRecord::Base
         this_artist = art
       end
     end
-    if this_artist = nil
+    if this_artist == nil
       self.artist = Artist.create!(name: name)
     else
       self.artist = this_artist
