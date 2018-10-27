@@ -6,7 +6,17 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
-    binding.pry
-    self.artist = Artist.create!(name: name)
+    x = true
+    Artist.all.each do |art|
+      if art.name == name
+        x = true
+        this_artist = art
+      end
+    end
+    if x == false
+      self.artist = Artist.create!(name: name)
+    else
+      self.artist = art
+    end
   end
 end
