@@ -6,6 +6,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
+    binding.pry
     self.artist = Artist.create!(name: name)
   end
 end
